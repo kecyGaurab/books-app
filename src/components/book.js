@@ -72,7 +72,7 @@ const Book = ({book, handleFavorite}) => {
       </CardContent>
 
       <CardActions>
-        <IconButton onClick={() => handleExpandClick}>
+        <IconButton onClick={() => handleExpandClick (book)}>
           <ExpandMoreIcon />
 
         </IconButton>
