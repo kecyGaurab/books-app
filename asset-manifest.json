@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/thebooksapp/static/css/main.69eda509.chunk.css",
+    "main.js": "/thebooksapp/static/js/main.1bf09210.chunk.js",
+    "main.js.map": "/thebooksapp/static/js/main.1bf09210.chunk.js.map",
+    "runtime-main.js": "/thebooksapp/static/js/runtime-main.ad6dddd1.js",
+    "runtime-main.js.map": "/thebooksapp/static/js/runtime-main.ad6dddd1.js.map",
+    "static/js/2.9a813ddb.chunk.js": "/thebooksapp/static/js/2.9a813ddb.chunk.js",
+    "static/js/2.9a813ddb.chunk.js.map": "/thebooksapp/static/js/2.9a813ddb.chunk.js.map",
+    "index.html": "/thebooksapp/index.html",
+    "precache-manifest.f01bb2dfb3e5df01845fba3a41743ebc.js": "/thebooksapp/precache-manifest.f01bb2dfb3e5df01845fba3a41743ebc.js",
+    "service-worker.js": "/thebooksapp/service-worker.js",
+    "static/css/main.69eda509.chunk.css.map": "/thebooksapp/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.9a813ddb.chunk.js.LICENSE": "/thebooksapp/static/js/2.9a813ddb.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad6dddd1.js",
+    "static/js/2.9a813ddb.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.1bf09210.chunk.js"
+  ]
+}
