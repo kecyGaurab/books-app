@@ -99,7 +99,7 @@ const App = () => {
             ? books.map (book => (
                 <Fragment key={book.etag}>
                   {book.volumeInfo.imageLinks
-                    ? <Grid key={book.etag} item xs={3}>
+                    ? <Grid key={book.etag} item md={3} xs={12}>
                         <Book book={book} handleFavorite={handleFavorite} />
                       </Grid>
                     : <Error
