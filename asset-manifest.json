@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/books-app/public/static/css/main.69eda509.chunk.css",
-    "main.js": "/books-app/public/static/js/main.1bf09210.chunk.js",
-    "main.js.map": "/books-app/public/static/js/main.1bf09210.chunk.js.map",
-    "runtime-main.js": "/books-app/public/static/js/runtime-main.8617e669.js",
-    "runtime-main.js.map": "/books-app/public/static/js/runtime-main.8617e669.js.map",
-    "static/js/2.1ad12ae8.chunk.js": "/books-app/public/static/js/2.1ad12ae8.chunk.js",
-    "static/js/2.1ad12ae8.chunk.js.map": "/books-app/public/static/js/2.1ad12ae8.chunk.js.map",
-    "index.html": "/books-app/public/index.html",
-    "precache-manifest.a8be3e6530d1749c5a2e3c91732fb49a.js": "/books-app/public/precache-manifest.a8be3e6530d1749c5a2e3c91732fb49a.js",
-    "service-worker.js": "/books-app/public/service-worker.js",
-    "static/css/main.69eda509.chunk.css.map": "/books-app/public/static/css/main.69eda509.chunk.css.map",
-    "static/js/2.1ad12ae8.chunk.js.LICENSE": "/books-app/public/static/js/2.1ad12ae8.chunk.js.LICENSE"
+    "main.css": "/books-app/static/css/main.69eda509.chunk.css",
+    "main.js": "/books-app/static/js/main.1bf09210.chunk.js",
+    "main.js.map": "/books-app/static/js/main.1bf09210.chunk.js.map",
+    "runtime-main.js": "/books-app/static/js/runtime-main.b1c31a80.js",
+    "runtime-main.js.map": "/books-app/static/js/runtime-main.b1c31a80.js.map",
+    "static/js/2.ab3c1c23.chunk.js": "/books-app/static/js/2.ab3c1c23.chunk.js",
+    "static/js/2.ab3c1c23.chunk.js.map": "/books-app/static/js/2.ab3c1c23.chunk.js.map",
+    "index.html": "/books-app/index.html",
+    "precache-manifest.b6d5e6f33266a4674a82417b512f2a21.js": "/books-app/precache-manifest.b6d5e6f33266a4674a82417b512f2a21.js",
+    "service-worker.js": "/books-app/service-worker.js",
+    "static/css/main.69eda509.chunk.css.map": "/books-app/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.ab3c1c23.chunk.js.LICENSE": "/books-app/static/js/2.ab3c1c23.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.8617e669.js",
-    "static/js/2.1ad12ae8.chunk.js",
+    "static/js/runtime-main.b1c31a80.js",
+    "static/js/2.ab3c1c23.chunk.js",
     "static/css/main.69eda509.chunk.css",
     "static/js/main.1bf09210.chunk.js"
   ]
