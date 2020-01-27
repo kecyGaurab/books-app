@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/books-app/static/css/main.69eda509.chunk.css",
-    "main.js": "/books-app/static/js/main.1bf09210.chunk.js",
-    "main.js.map": "/books-app/static/js/main.1bf09210.chunk.js.map",
+    "main.js": "/books-app/static/js/main.95feecba.chunk.js",
+    "main.js.map": "/books-app/static/js/main.95feecba.chunk.js.map",
     "runtime-main.js": "/books-app/static/js/runtime-main.b1c31a80.js",
     "runtime-main.js.map": "/books-app/static/js/runtime-main.b1c31a80.js.map",
     "static/js/2.ab3c1c23.chunk.js": "/books-app/static/js/2.ab3c1c23.chunk.js",
     "static/js/2.ab3c1c23.chunk.js.map": "/books-app/static/js/2.ab3c1c23.chunk.js.map",
     "index.html": "/books-app/index.html",
-    "precache-manifest.b6d5e6f33266a4674a82417b512f2a21.js": "/books-app/precache-manifest.b6d5e6f33266a4674a82417b512f2a21.js",
+    "precache-manifest.e93a0a218d52fd6598fe5c95a9aebf5c.js": "/books-app/precache-manifest.e93a0a218d52fd6598fe5c95a9aebf5c.js",
     "service-worker.js": "/books-app/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/books-app/static/css/main.69eda509.chunk.css.map",
     "static/js/2.ab3c1c23.chunk.js.LICENSE": "/books-app/static/js/2.ab3c1c23.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b1c31a80.js",
     "static/js/2.ab3c1c23.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.1bf09210.chunk.js"
+    "static/js/main.95feecba.chunk.js"
   ]
 }
