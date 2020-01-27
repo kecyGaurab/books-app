@@ -13,6 +13,7 @@ const App = () => {
   const [searchParameter, setSearchParameter] = useState ('Book-Name');
   const [errorMessage, setErrorMessage] = useState ('No results found');
   const [open, setOpen] = useState (true);
+  const [favorites, setFavorites] = useState ([]);
 
   const baseUrl = 'https://www.googleapis.com/books/v1/volumes';
 
@@ -44,6 +45,11 @@ const App = () => {
   const handleSubmit = e => {
     setSearchQuery (e.currentTarget.value);
   };
+
+  const handleFavorite = book => {
+    setFavorites ([...favorites, book]);
+  };
+  console.log ('favorite', favorites);
 
   function getByBookName (searchQuery, apiKey) {
     return axios.get (
@@ -94,7 +100,7 @@ const App = () => {
                 <Fragment key={book.etag}>
                   {book.volumeInfo.imageLinks
                     ? <Grid key={book.etag} item xs={3}>
-                        <Book book={book} />
+                        <Book book={book} handleFavorite={handleFavorite} />
                       </Grid>
                     : <Error
                         errorMessage={errorMessage}
