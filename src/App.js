@@ -9,7 +9,7 @@ const App = () => {
   const apiKey = process.env.REACT_APP_API_KEY;
   const [books, setbooks] = useState ([]);
   const [query, setQuery] = useState ('');
-  const [searchQuery, setSearchQuery] = useState ('football');
+  const [searchQuery, setSearchQuery] = useState ('coding');
   const [searchParameter, setSearchParameter] = useState ('Book-Name');
   const [errorMessage, setErrorMessage] = useState ('No results found');
   const [open, setOpen] = useState (true);
@@ -22,7 +22,7 @@ const App = () => {
   };
 
   const resetSearchQuery = () => {
-    setSearchQuery ('football');
+    setSearchQuery ('coding');
   };
 
   const handleClose = (event, reason) => {
@@ -58,7 +58,7 @@ const App = () => {
 
   function getByAuthor (searchQuery, apiKey) {
     return axios.get (
-      `${baseUrl}?q=''+inauthor:${searchQuery}&orderBy=newest&key=${apiKey}&maxResults=20`
+      `${baseUrl}?q=${null}+inauthor:${searchQuery}&orderBy=newest&key=${apiKey}&maxResults=20`
     );
   }
 
@@ -92,6 +92,7 @@ const App = () => {
       />
       <Container>
         <Grid container justify="space-around" direction="row" spacing={6}>
+
           {books
             ? books.map (book => (
                 <Fragment key={book.etag}>
@@ -108,7 +109,7 @@ const App = () => {
                 </Fragment>
               ))
             : <Error
-                errorMessage={errorMessage}
+                errorMessage="No results found"
                 open={open}
                 handleClose={handleClose}
                 handleClick={handleClick}

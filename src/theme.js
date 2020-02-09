@@ -28,7 +28,7 @@ theme.overrides = {
   },
   MuiContainer: {
     root: {
-      padding: '10px 0',
+      padding: '20px 0',
     },
   },
   MuiCardHeader: {
@@ -76,6 +76,7 @@ theme.overrides = {
   MuiButton: {
     sizeLarge: {
       height: '55px',
+      opacity: '0.5',
     },
     containedPrimary: {
       backgroundColor: 'green',
@@ -83,6 +84,11 @@ theme.overrides = {
     },
     label: {
       color: 'white',
+    },
+  },
+  MuiAppBar: {
+    root: {
+      padding: '20px 0px',
     },
   },
 };
