@@ -91,7 +91,8 @@ const App = () => {
         handleSubmit={handleSubmit}
       />
       <Container>
-        <Grid container justify="space-between" direction="row" spacing={3}>
+        <Grid container justify="space-around" direction="row" spacing={6}>
+
           {books
             ? books.map (book => (
                 <Fragment key={book.etag}>
