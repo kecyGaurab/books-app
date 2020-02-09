@@ -15,7 +15,7 @@ import {StyledCard, StyledLink} from './styledComponents'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import {connect} from 'react-redux'
-import {addFavorite} from '../actions/index'
+import {addFavorite} from '../redux/actions/index'
 
 const Image = styled.div`
   height: 180px;

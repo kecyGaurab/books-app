@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import {
@@ -8,11 +7,8 @@ import {
   Grid,
   MenuItem,
   InputAdornment,
-
 } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
-
-
 
 const Search = ({
   handleSubmit,
@@ -22,11 +18,8 @@ const Search = ({
   searchParameter,
 }) => {
   return (
-
     <Grid container direction="row" alignItems="center">
       <Grid item md={6} xs={12}>
-
-
         <TextField
           value={query}
           fullWidth
@@ -34,16 +27,12 @@ const Search = ({
           size="medium"
           id="outlined-search"
           type="search"
-
           variant="outlined"
-
           placeholder="Search for books"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-
                 <SearchIcon fontSize="large" />
-
               </InputAdornment>
             ),
           }}
@@ -55,11 +44,11 @@ const Search = ({
           value={query}
           onClick={handleSubmit}
           size="large"
-    variant="outlined"
+          color="primary"
+          variant="outlined"
         >
           search
         </Button>
-
       </Grid>
       <Grid item md={3} xs={12}>
         <Select
@@ -67,7 +56,6 @@ const Search = ({
           defaultValue="Book-Name"
           variant="outlined"
         >
-
           <MenuItem value="Author">Author</MenuItem>
           <MenuItem value="Book-Name">Book-Name</MenuItem>
         </Select>
