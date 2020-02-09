@@ -20,7 +20,7 @@ const Image = styled.div`
 `
 
 const Title = styled.div`
-  height: 40px;
+  height: 50px;
   overflow: hidden;
 `
 
