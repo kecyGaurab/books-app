@@ -1,4 +1,6 @@
-import React from 'react';
+
+import React from 'react'
+
 import {
   Button,
   TextField,
@@ -6,9 +8,11 @@ import {
   Grid,
   MenuItem,
   InputAdornment,
-} from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
-import {StyledButton} from './styledComponents';
+
+} from '@material-ui/core'
+import SearchIcon from '@material-ui/icons/Search'
+
+
 
 const Search = ({
   handleSubmit,
@@ -18,8 +22,10 @@ const Search = ({
   searchParameter,
 }) => {
   return (
+
     <Grid container direction="row" alignItems="center">
       <Grid item md={6} xs={12}>
+
 
         <TextField
           value={query}
@@ -28,12 +34,16 @@ const Search = ({
           size="medium"
           id="outlined-search"
           type="search"
-          variant="filled"
+
+          variant="outlined"
+
           placeholder="Search for books"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon fontSize="medium" />
+
+                <SearchIcon fontSize="large" />
+
               </InputAdornment>
             ),
           }}
@@ -45,8 +55,7 @@ const Search = ({
           value={query}
           onClick={handleSubmit}
           size="large"
-          variant="contained"
-          color="primary"
+    variant="outlined"
         >
           search
         </Button>
@@ -58,17 +67,13 @@ const Search = ({
           defaultValue="Book-Name"
           variant="outlined"
         >
-          <MenuItem value="Author">
-            Author
-          </MenuItem>
-          <MenuItem value="Book-Name">
-            Book-Name
-          </MenuItem>
-        </Select>
 
+          <MenuItem value="Author">Author</MenuItem>
+          <MenuItem value="Book-Name">Book-Name</MenuItem>
+        </Select>
       </Grid>
     </Grid>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search
