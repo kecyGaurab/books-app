@@ -2,10 +2,12 @@ import React, {Fragment, useState, useEffect} from 'react';
 import axios from 'axios';
 import {Grid, Container, CssBaseline} from '@material-ui/core';
 import Error from './components/error';
+import {connect} from 'react-redux';
 import NavBar from './components/navBar';
 import Book from './components/book';
 
-const App = () => {
+const App = props => {
+  console.log ('props :', props);
   const apiKey = process.env.REACT_APP_API_KEY;
   const [books, setbooks] = useState ([]);
   const [query, setQuery] = useState ('');
@@ -13,7 +15,6 @@ const App = () => {
   const [searchParameter, setSearchParameter] = useState ('Book-Name');
   const [errorMessage, setErrorMessage] = useState ('No results found');
   const [open, setOpen] = useState (true);
-  const [favorites, setFavorites] = useState ([]);
 
   const baseUrl = 'https://www.googleapis.com/books/v1/volumes';
 
@@ -44,10 +45,6 @@ const App = () => {
 
   const handleSubmit = e => {
     setSearchQuery (e.currentTarget.value);
-  };
-
-  const handleFavorite = book => {
-    setFavorites ([...favorites, book]);
   };
 
   function getByBookName (searchQuery, apiKey) {
@@ -98,7 +95,7 @@ const App = () => {
                 <Fragment key={book.etag}>
                   {book.volumeInfo.imageLinks
                     ? <Grid key={book.etag} item md={3} xs={12}>
-                        <Book book={book} handleFavorite={handleFavorite} />
+                        <Book book={book} />
                       </Grid>
                     : <Error
                         errorMessage={errorMessage}
@@ -120,4 +117,8 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = state => {
+  return {favorites: state.favorites};
+};
+
+export default connect (mapStateToProps) (App);

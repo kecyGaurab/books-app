@@ -14,22 +14,32 @@ import styled from 'styled-components'
 import {StyledCard, StyledLink} from './styledComponents'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import FavoriteIcon from '@material-ui/icons/Favorite'
+import {connect} from 'react-redux'
+import {addFavorite} from '../actions/index'
 
 const Image = styled.div`
   height: 180px;
 `
 
 const Title = styled.div`
-
   height: 50px;
-
   overflow: hidden;
 `
+const mapDispatchToProps = dispatch => {
+  return {
+    addFavorite: book => dispatch(addFavorite(book)),
+  }
+}
 
-const Book = ({book, handleFavorite}) => {
+const ConnectedBook = ({book, ...props}) => {
   const [expanded, setExpanded] = useState(false)
   const handleExpandClick = () => {
     setExpanded(!expanded)
+  }
+
+  const handleFavorite = book => {
+    const addFavorite = props.addFavorite
+    addFavorite(book)
   }
 
   return (
@@ -96,5 +106,7 @@ const Book = ({book, handleFavorite}) => {
     </StyledCard>
   )
 }
+
+const Book = connect(null, mapDispatchToProps)(ConnectedBook)
 
 export default Book
