@@ -4,7 +4,7 @@ const initialState = {
   favorites: [],
 };
 
-export const rootReducer = (state = initialState, action) => {
+export const favoriteReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FAVORITE:
       return {
