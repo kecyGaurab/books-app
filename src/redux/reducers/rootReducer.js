@@ -13,10 +13,12 @@ export const favoriteReducer = (state = initialState, action) => {
       };
 
     case REMOVE_FAVORITE:
-      const removedFavorites = state.favorites.filter (
-        book => book.id !== action.payload.id
-      );
-      return {...state, removedFavorites};
+      return {
+        ...state,
+        favorites: state.favorites.filter (
+          favorite => favorite.etag !== action.payload.etag
+        ),
+      };
 
     default:
       return state;

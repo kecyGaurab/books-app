@@ -1,7 +1,7 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import axios from 'axios'
-import {Grid, Container, CssBaseline, Button} from '@material-ui/core'
-import {Link, withRouter} from 'react-router-dom'
+import {Grid, Container, CssBaseline} from '@material-ui/core'
+import {withRouter} from 'react-router-dom'
 import Error from '../components/error'
 import NavBar from '../components/navBar'
 import Book from '../components/book'
@@ -90,7 +90,7 @@ const HomePage = props => {
               <Fragment key={book.etag}>
                 {book.volumeInfo.imageLinks ? (
                   <Grid key={book.etag} item md={3} xs={12}>
-                    <Book book={book} />
+                    <Book book={book} match={props.match} />
                   </Grid>
                 ) : (
                   <Error
