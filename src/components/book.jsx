@@ -35,8 +35,7 @@ const ConnectedBook = ({book, match, ...props}) => {
   }
 
   const handleFavorite = book => {
-    const favorites = props.favorites
-    const addFavorite = props.addFavorite
+    const {favorites, addFavorite} = props
     const isFavorite =
       favorites && favorites.find(fav => fav.etag === book.etag)
     if (favorites.length === 0 || isFavorite === undefined) {
@@ -46,7 +45,6 @@ const ConnectedBook = ({book, match, ...props}) => {
 
   const handleRemove = book => {
     const removeFavorite = props.removeFavorite
-    console.log('book :', book)
     removeFavorite(book)
     window.confirm('Are you sure you want to remove this book')
   }
