@@ -7,7 +7,6 @@ import {
   Grid,
   Typography,
   Collapse,
-  Button,
 } from '@material-ui/core'
 
 import IconButton from '@material-ui/core/IconButton'
