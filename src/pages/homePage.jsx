@@ -90,7 +90,7 @@ const HomePage = props => {
               <Fragment key={book.etag}>
                 {book.volumeInfo.imageLinks ? (
                   <Grid key={book.etag} item md={3} xs={12}>
-                    <Book book={book} />
+                    <Book book={book} match={props.match} />
                   </Grid>
                 ) : (
                   <Error
