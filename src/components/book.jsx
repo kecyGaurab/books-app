@@ -65,7 +65,7 @@ const ConnectedBook = ({book, match, ...props}) => {
       <CardHeader
         title={
           <Title>
-            <Typography variant="h6">{book.volumeInfo.title}</Typography>
+            <Typography variant="subtitle2">{book.volumeInfo.title}</Typography>
           </Title>
         }
         subheader={

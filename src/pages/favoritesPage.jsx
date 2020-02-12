@@ -12,15 +12,16 @@ const FavoritesPage = ({favorites, ...props}) => {
   return (
     <Container>
       <Grid container direction="row" spacing={3}>
-        {favorites.map(favorite => (
-          <Fragment key={favorite.etag}>
-            {favorite.volumeInfo.imageLinks ? (
-              <Grid key={favorite.etag} item md={3} xs={12}>
-                <Book match={props.match} book={favorite} />
-              </Grid>
-            ) : null}
-          </Fragment>
-        ))}
+        {favorites &&
+          favorites.map(favorite => (
+            <Fragment key={favorite.etag}>
+              {favorite.volumeInfo.imageLinks ? (
+                <Grid key={favorite.etag} item md={3} xs={12}>
+                  <Book match={props.match} book={favorite} />
+                </Grid>
+              ) : null}
+            </Fragment>
+          ))}
       </Grid>
     </Container>
   )

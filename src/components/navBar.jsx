@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {
   Grid,
   Typography,
@@ -10,6 +9,7 @@ import {
   MenuItem,
 } from '@material-ui/core'
 import Search from './search'
+import {StyledLinkRouter} from './styledComponents'
 
 const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -44,12 +44,19 @@ const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <Link to={'/favorites'}>
+                  <StyledLinkRouter
+                    style={{textDecoration: 'none'}}
+                    to={'/favorites'}
+                  >
                     <MenuItem>Favorites</MenuItem>
-                  </Link>
-                  <Link to={'/favorites'}>
+                  </StyledLinkRouter>
+                  <StyledLinkRouter
+                    style={{textDecoration: 'none'}}
+                    underline="none"
+                    to={'/login'}
+                  >
                     <MenuItem>Login</MenuItem>
-                  </Link>
+                  </StyledLinkRouter>
                 </Menu>
               </Toolbar>
             </Grid>
