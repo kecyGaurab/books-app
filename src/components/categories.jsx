@@ -4,10 +4,9 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails,
   Typography,
-  Chip,
-  Avatar,
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import Chips from './chips'
 
 const Categories = () => {
   return (
@@ -16,7 +15,7 @@ const Categories = () => {
         <Typography>Categories</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        <Chip avatar={<Avatar>M</Avatar>} label="Clickable" />
+        <Chips />
       </ExpansionPanelDetails>
     </ExpansionPanel>
   )

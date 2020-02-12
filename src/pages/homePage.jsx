@@ -75,6 +75,8 @@ const HomePage = props => {
       })
   }, [searchQuery, searchParameter, apiKey])
 
+  console.log('books :', books)
+
   return (
     <Fragment>
       <CssBaseline />
