@@ -47,7 +47,7 @@ const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
                   <Link to={'/favorites'}>
                     <MenuItem>Favorites</MenuItem>
                   </Link>
-                  <Link>
+                  <Link to={'/login'}>
                     <MenuItem>Login</MenuItem>
                   </Link>
                 </Menu>
