@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
   Grid,
   Typography,
@@ -12,7 +12,7 @@ import Search from './search'
 import {StyledLinkRouter} from './styledComponents'
 
 const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget)
