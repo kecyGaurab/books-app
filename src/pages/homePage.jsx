@@ -6,9 +6,12 @@ import Error from '../components/error'
 import NavBar from '../components/navBar'
 import Book from '../components/book'
 import Categories from '../components/categories'
-import {auth, createUserProfileDocument} from '../firebase/utils'
+import {connect} from 'react-redux'
+import {createStructuredSelector} from 'reselect'
+import {selectCurrentUser} from '../redux/selector/userSelector'
 
 const HomePage = props => {
+  console.log('props in homepage :', props)
   const apiKey = process.env.REACT_APP_API_KEY
   const [books, setbooks] = useState([])
   const [query, setQuery] = useState('')
@@ -16,27 +19,6 @@ const HomePage = props => {
   const [searchParameter, setSearchParameter] = useState('Book-Name')
   const [errorMessage, setErrorMessage] = useState('No results found')
   const [open, setOpen] = useState(true)
-  const [currentUser, setCurrentUser] = useState(null)
-
-  useEffect(() => {
-    let unsubscribeFromAuth = null
-    unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth)
-        userRef.onSnapshot(snapShot => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data(),
-          })
-        })
-      } else {
-        setCurrentUser(userAuth)
-      }
-    })
-    return () => {
-      unsubscribeFromAuth()
-    }
-  }, [])
 
   const baseUrl = 'https://www.googleapis.com/books/v1/volumes'
 
@@ -106,7 +88,7 @@ const HomePage = props => {
         handleSearchParameter={handleSearchParameter}
         query={query}
         handleSubmit={handleSubmit}
-        currentUser={currentUser}
+        currentUser={props.currentUser}
       />
       <Container>
         <Grid container justify="space-around" direction="row" spacing={6}>
@@ -144,4 +126,8 @@ const HomePage = props => {
   )
 }
 
-export default withRouter(HomePage)
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+})
+
+export default connect(mapStateToProps)(withRouter(HomePage))

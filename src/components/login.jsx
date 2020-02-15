@@ -6,7 +6,7 @@ export const LoginButton = ({signInWithGoogle, signIn}) => {
   return (
     <Grid container direction="row" spacing={2} justify="space-between">
       <Grid item>
-        <Button onClick={() => signIn} variant="outlined">
+        <Button onClick={signIn} variant="outlined">
           Sign in
         </Button>
       </Grid>

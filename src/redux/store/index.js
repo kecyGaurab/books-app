@@ -1,8 +1,8 @@
 import {createStore, applyMiddleware} from 'redux';
-import {favoriteReducer} from '../reducers/favoriteReducer';
+import rootReducer from '../reducers/rootReducer';
 
 import logger from 'redux-logger';
 
-const store = createStore (favoriteReducer, applyMiddleware (logger));
+const store = createStore (rootReducer, applyMiddleware (logger));
 
 export default store;
