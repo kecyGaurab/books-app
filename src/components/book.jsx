@@ -132,7 +132,7 @@ const ConnectedBook = ({book, match, ...props}) => {
 }
 
 const mapStateToProps = state => {
-  return {...state, favorites: state.favorites}
+  return {...state, favorites: state.favBooks.favorites}
 }
 const mapDispatchToProps = dispatch => ({
   addFavorite: book => dispatch(addFavorite(book)),

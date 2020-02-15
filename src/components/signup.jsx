@@ -12,16 +12,13 @@ const Signup = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
-
+    const {displayName, email, password, confirmPassword} = credential
     if (password !== confirmPassword) {
       alert("password don't match")
       return
     }
     try {
-      const {user} = await auth.createUserWithEmailAndPassword(
-        credential.email,
-        credential.password
-      )
+      const {user} = await auth.createUserWithEmailAndPassword(email, password)
       await createUserProfileDocument(user, {displayName})
 
       setCredential({
@@ -37,7 +34,7 @@ const Signup = () => {
 
   const handleChange = event => {
     const {name, value} = event.target
-    setCredential({[name]: value})
+    setCredential({...credential, [name]: value})
   }
 
   const {displayName, email, password, confirmPassword} = credential
@@ -96,7 +93,7 @@ const Signup = () => {
           />
         </Grid>
         <Grid item>
-          <Button onClick={() => handleSubmit} variant="outlined">
+          <Button onClick={handleSubmit} variant="outlined">
             Sign Up
           </Button>
         </Grid>
