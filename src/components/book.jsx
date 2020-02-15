@@ -46,7 +46,6 @@ const ConnectedBook = ({book, match, ...props}) => {
 
   const handleRemove = book => {
     const removeFavorite = props.removeFavorite
-    console.log('book :', book)
     removeFavorite(book)
     window.confirm('Are you sure you want to remove this book')
   }
@@ -67,7 +66,7 @@ const ConnectedBook = ({book, match, ...props}) => {
       <CardHeader
         title={
           <Title>
-            <Typography variant="h6">{book.volumeInfo.title}</Typography>
+            <Typography variant="subtitle2">{book.volumeInfo.title}</Typography>
           </Title>
         }
         subheader={

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {
   Grid,
@@ -8,11 +8,20 @@ import {
   Button,
   Menu,
   MenuItem,
+  Avatar,
 } from '@material-ui/core'
 import Search from './search'
+import {auth} from '../firebase/utils'
 
-const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
-  const [anchorEl, setAnchorEl] = React.useState(null)
+const NavBar = props => {
+  const {
+    handleSearch,
+    handleSearchParameter,
+    query,
+    handleSubmit,
+    currentUser,
+  } = props
+  const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget)
@@ -35,6 +44,9 @@ const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
           >
             <Grid item xs={1}>
               <Toolbar>
+                {currentUser ? (
+                  <Avatar size="large" src={currentUser.photoURL} />
+                ) : null}
                 <Button onClick={handleClick} size="medium" variant="outlined">
                   Menu
                 </Button>
@@ -47,13 +59,17 @@ const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
                   <Link to={'/favorites'}>
                     <MenuItem>Favorites</MenuItem>
                   </Link>
-                  <Link>
-                    <MenuItem>Login</MenuItem>
-                  </Link>
+                  {currentUser ? (
+                    <MenuItem onClick={() => auth.signOut()}>Logout</MenuItem>
+                  ) : (
+                    <Link to={'/login'}>
+                      <MenuItem>Login</MenuItem>
+                    </Link>
+                  )}
                 </Menu>
               </Toolbar>
             </Grid>
-            <Grid item xs={5}>
+            <Grid item xs={3}>
               <Typography variant="h3">BOOKS</Typography>
             </Grid>
             <Grid item xs={6}>

@@ -79,16 +79,21 @@ theme.overrides = {
       opacity: '0.5',
     },
     containedPrimary: {
-      backgroundColor: 'green',
-      color: theme.palette.background.default,
+      backgroundColor: 'red',
+      // color: theme.palette.background.default,
     },
     label: {
-      color: 'white',
+      color: theme.palette.primary.main,
     },
   },
   MuiAppBar: {
     root: {
       padding: '20px 0px',
+    },
+  },
+  MuiAvatar: {
+    root: {
+      marginRight: '20px',
     },
   },
 };
