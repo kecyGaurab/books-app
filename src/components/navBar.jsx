@@ -11,6 +11,8 @@ import {
   Avatar,
 } from '@material-ui/core'
 import Search from './search'
+
+import {StyledLinkRouter} from './styledComponents'
 import {auth} from '../firebase/utils'
 
 const NavBar = props => {
@@ -56,9 +58,13 @@ const NavBar = props => {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <Link to={'/favorites'}>
+                  <StyledLinkRouter
+                    style={{textDecoration: 'none'}}
+                    to={'/favorites'}
+                  >
                     <MenuItem>Favorites</MenuItem>
-                  </Link>
+                  </StyledLinkRouter>
+
                   {currentUser ? (
                     <MenuItem onClick={() => auth.signOut()}>Logout</MenuItem>
                   ) : (

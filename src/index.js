@@ -17,7 +17,6 @@ ReactDOM.render (
   <ThemeProvider theme={theme}>
     <Provider store={store}>
       <BrowserRouter>
-
         <App />
       </BrowserRouter>
     </Provider>

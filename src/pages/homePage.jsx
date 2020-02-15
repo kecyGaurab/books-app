@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import Error from '../components/error'
 import NavBar from '../components/navBar'
 import Book from '../components/book'
+import Categories from '../components/categories'
 import {auth, createUserProfileDocument} from '../firebase/utils'
 
 const HomePage = props => {
@@ -95,6 +96,8 @@ const HomePage = props => {
       })
   }, [searchQuery, searchParameter, apiKey])
 
+  console.log('books :', books)
+
   return (
     <Fragment>
       <CssBaseline />
@@ -107,6 +110,9 @@ const HomePage = props => {
       />
       <Container>
         <Grid container justify="space-around" direction="row" spacing={6}>
+          <Grid item md={12}>
+            <Categories />
+          </Grid>
           {books ? (
             books.map(book => (
               <Fragment key={book.etag}>
