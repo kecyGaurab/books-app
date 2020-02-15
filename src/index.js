@@ -6,12 +6,8 @@ import App from './App';
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from './theme';
 import {Provider} from 'react-redux';
-import {favoriteReducer} from './redux/reducers/rootReducer';
-
-import {createStore} from 'redux';
+import store from './redux/store/index';
 import {BrowserRouter} from 'react-router-dom';
-
-const store = createStore (favoriteReducer);
 
 ReactDOM.render (
   <ThemeProvider theme={theme}>
