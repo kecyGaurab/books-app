@@ -14,9 +14,10 @@ const Chips = () => {
     'Travel',
     'Humour',
     'Food',
+    'Sports',
   ]
   return (
-    <Grid container direction="row" spacing={2}>
+    <Grid container direction="row" spacing={4}>
       {genres.map(genre => (
         <Grid item key={genre}>
           <Chip label={genre} />
