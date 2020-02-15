@@ -1,16 +1,6 @@
 import React from 'react'
 import {signInWithGoogle} from '../firebase/utils'
-import {
-  Select,
-  TextField,
-  Grid,
-  Typography,
-  MenuItem,
-  Button,
-  Card,
-  CardContent,
-  InputLabel,
-} from '@material-ui/core'
+import {TextField, Grid, Typography, Button} from '@material-ui/core'
 
 export const LoginButton = () => {
   return (
@@ -20,7 +10,7 @@ export const LoginButton = () => {
       </Grid>
       <Grid item>
         <Button variant="outlined" onClick={signInWithGoogle}>
-          Sign in Google
+          Sign in with Google
         </Button>
       </Grid>
     </Grid>

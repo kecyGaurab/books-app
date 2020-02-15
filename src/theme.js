@@ -91,6 +91,11 @@ theme.overrides = {
       padding: '20px 0px',
     },
   },
+  MuiAvatar: {
+    root: {
+      marginRight: '20px',
+    },
+  },
 };
 
 export default theme;
