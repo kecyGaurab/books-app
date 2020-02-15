@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 import {
   Grid,
   Typography,
@@ -7,11 +8,21 @@ import {
   Button,
   Menu,
   MenuItem,
+  Avatar,
 } from '@material-ui/core'
 import Search from './search'
-import {StyledLinkRouter} from './styledComponents'
 
-const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
+import {StyledLinkRouter} from './styledComponents'
+import {auth} from '../firebase/utils'
+
+const NavBar = props => {
+  const {
+    handleSearch,
+    handleSearchParameter,
+    query,
+    handleSubmit,
+    currentUser,
+  } = props
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = event => {
@@ -35,6 +46,9 @@ const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
           >
             <Grid item xs={1}>
               <Toolbar>
+                {currentUser ? (
+                  <Avatar size="large" src={currentUser.photoURL} />
+                ) : null}
                 <Button onClick={handleClick} size="medium" variant="outlined">
                   Menu
                 </Button>
@@ -50,17 +64,18 @@ const NavBar = ({handleSearch, handleSearchParameter, query, handleSubmit}) => {
                   >
                     <MenuItem>Favorites</MenuItem>
                   </StyledLinkRouter>
-                  <StyledLinkRouter
-                    style={{textDecoration: 'none'}}
-                    underline="none"
-                    to={'/login'}
-                  >
-                    <MenuItem>Login</MenuItem>
-                  </StyledLinkRouter>
+
+                  {currentUser ? (
+                    <MenuItem onClick={() => auth.signOut()}>Logout</MenuItem>
+                  ) : (
+                    <Link to={'/login'}>
+                      <MenuItem>Login</MenuItem>
+                    </Link>
+                  )}
                 </Menu>
               </Toolbar>
             </Grid>
-            <Grid item xs={5}>
+            <Grid item xs={3}>
               <Typography variant="h3">BOOKS</Typography>
             </Grid>
             <Grid item xs={6}>

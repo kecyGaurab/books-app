@@ -9,8 +9,8 @@ const App = () => {
     <Fragment>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/favorites" component={FavoritesPage} />
-        <Route exact path="/login" component={LoginPage} />
+        <Route path="/favorites" component={FavoritesPage} />
+        <Route path="/login" component={LoginPage} />
       </Switch>
     </Fragment>
   );
