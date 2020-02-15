@@ -1,12 +1,14 @@
-import React from 'react'
-import {signInWithGoogle} from '../firebase/utils'
+import React, {useState} from 'react'
+import {signInWithGoogle, auth} from '../firebase/utils'
 import {TextField, Grid, Typography, Button} from '@material-ui/core'
 
-export const LoginButton = () => {
+export const LoginButton = ({signInWithGoogle, signIn}) => {
   return (
     <Grid container direction="row" spacing={2} justify="space-between">
       <Grid item>
-        <Button variant="outlined">Sign in</Button>
+        <Button onClick={() => signIn} variant="outlined">
+          Sign in
+        </Button>
       </Grid>
       <Grid item>
         <Button variant="outlined" onClick={signInWithGoogle}>
@@ -18,32 +20,55 @@ export const LoginButton = () => {
 }
 
 const Login = () => {
+  const [user, setUser] = useState({email: '', password: ''})
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+    try {
+      await auth.signInWithEmailAndPassword(user.email, user.password)
+      setUser({email: '', password: ''})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleChange = event => {
+    setUser({...user, [event.target.name]: event.target.value})
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Grid container direction="column" spacing={1}>
-        <Grid item xs={3}>
+        <Grid item>
           <Typography variant="h6">Login</Typography>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item>
           <TextField
             fullWidth
             variant="outlined"
             type="text"
-            label="Username"
-            name="Email"
+            label="email"
+            name="email"
+            value={user.email}
+            onChange={handleChange}
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item>
           <TextField
             fullWidth
             variant="outlined"
             type="password"
+            onChange={handleChange}
             label="Password"
             name="password"
+            value={user.password}
           />
         </Grid>
-        <Grid item xs={3}>
-          <LoginButton />
+        <Grid item>
+          <LoginButton
+            signInWithGoogle={signInWithGoogle}
+            signIn={handleSubmit}
+          />
         </Grid>
       </Grid>
     </form>
